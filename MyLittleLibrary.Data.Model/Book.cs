@@ -14,5 +14,6 @@ namespace MyLittleLibrary.Data.Model
         public DateTime EklemeTarihi { get; set; }
         public int AuthotId { get; set; }
         public Author? Author { get; set; }
+        public List<Category>? Categories { get; set; }
     }
 }

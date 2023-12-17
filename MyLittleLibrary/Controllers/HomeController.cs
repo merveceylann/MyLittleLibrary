@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyLittleLibrary.Data;
 using MyLittleLibrary.Models;
 using System.Diagnostics;
 
@@ -15,13 +16,11 @@ namespace MyLittleLibrary.Controllers
 
         public IActionResult Index()
         {
+            LibraryContext context = new LibraryContext();
+            var model = context.Books.ToList();
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
